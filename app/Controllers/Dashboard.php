@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\UsersModel;
+use Config\Database;
 
 class Dashboard extends BaseController
 {
@@ -13,6 +14,7 @@ class Dashboard extends BaseController
 
     public function login()
     {
+        helper(['form']);
         return view('admin/login');
     }
 
@@ -35,17 +37,19 @@ class Dashboard extends BaseController
 
     public function postlogin()
     {
-        $model = new UsersModel();
+        $usermodel = new UsersModel();
         $session = session();
 
         $username = $this->request->getVar('username');
         $password = $this->request->getVar('password');
 
-        $cocok_user = $model->where('username', $username)->first();
-        dd($cocok_user);
-        if ($cocok_user) {
-            $cocok_password = $model->where('password', $password)->first();
-            if ($cocok_password) {
+        $cocokuser = $usermodel->where('username', $username)->first();
+        dd($cocokuser);
+        if ($cocokuser) {
+            // $cocokpassword = $usermodel->where('password', $password)->first();
+            $cocok_password = $cocokuser['password'];
+            $password_verify = password_verify($cocok_password, $password);
+            if ($password_verify) {
                 $setData = [
                     'username' => $username,
                     'password' => $password
