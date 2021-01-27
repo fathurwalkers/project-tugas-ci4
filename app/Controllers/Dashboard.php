@@ -8,7 +8,4 @@ class Dashboard extends BaseController
     {
         return "Hello";
     }
-
-    //--------------------------------------------------------------------
-
 }
