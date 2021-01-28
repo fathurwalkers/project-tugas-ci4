@@ -40,8 +40,8 @@ class Dashboard extends BaseController
         $usermodel = new UsersModel();
         $session = session();
 
-        $username = $this->request->getVar('username');
-        $password = $this->request->getVar('password');
+        $username = $this->request->getPost('username');
+        $password = $this->request->getPost('password');
 
         $cocokuser = $usermodel->where('username', $username)->first();
         dd($cocokuser);
