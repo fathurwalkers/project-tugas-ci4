@@ -7,6 +7,11 @@ use Config\Database;
 
 class Dashboard extends BaseController
 {
+    public function __construct()
+    {
+        $this->usermodel = new UsersModel();
+    }
+
     public function index()
     {
         return view('admin/index');
@@ -25,9 +30,9 @@ class Dashboard extends BaseController
 
     public function postregister()
     {
-        $userModel = new UsersModel;
+        // $userModel = new UsersModel;
         $level = "admin";
-        $userModel->save([
+        $this->usermodel->save([
             'username' => $this->request->getVar('username'),
             'password' => $this->request->getVar('password'),
             'level' => "admin",
@@ -37,19 +42,19 @@ class Dashboard extends BaseController
 
     public function postlogin()
     {
-        $usermodel = new UsersModel();
+        // $this->usermodel = new UsersModel();
         $session = session();
 
         $username = $this->request->getPost('username');
         $password = $this->request->getPost('password');
 
-        $cocokuser = $usermodel->where('username', $username)->first();
+        $cocokuser = $this->usermodel->where('username', $username)->first();
         dd($cocokuser);
         if ($cocokuser) {
-            // $cocokpassword = $usermodel->where('password', $password)->first();
-            $cocok_password = $cocokuser['password'];
-            $password_verify = password_verify($cocok_password, $password);
-            if ($password_verify) {
+            $cocokpassword = $this->usermodel->where('password', $password)->first();
+            // $cocok_password = $cocokuser['password'];
+            // $password_verify = password_verify($password, $cocok_password);
+            if ($cocokpassword) {
                 $setData = [
                     'username' => $username,
                     'password' => $password
@@ -62,5 +67,6 @@ class Dashboard extends BaseController
         } else {
             return redirect()->to('/login');
         }
+        return redirect()->to('/login');
     }
 }
