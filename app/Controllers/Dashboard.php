@@ -14,7 +14,12 @@ class Dashboard extends BaseController
 
     public function index()
     {
-        return view('admin/index');
+        $users = session('username');
+        if (!$users){
+            return redirect()->to('/login');
+        }else{
+            return view('admin/index', ['users' => $users]);
+        }
     }
 
     public function login()
@@ -26,6 +31,13 @@ class Dashboard extends BaseController
     public function register()
     {
         return view('admin/register');
+    }
+
+    public function logout()
+    {
+        $session = session();
+        $session->stop();
+        return redirect()->to('/login');
     }
 
     public function postregister()
@@ -49,7 +61,7 @@ class Dashboard extends BaseController
         $password = $this->request->getPost('password');
 
         $cocokuser = $this->usermodel->where('username', $username)->first();
-        dd($cocokuser);
+        // dd($cocokuser);
         if ($cocokuser) {
             $cocokpassword = $this->usermodel->where('password', $password)->first();
             // $cocok_password = $cocokuser['password'];
@@ -68,5 +80,15 @@ class Dashboard extends BaseController
             return redirect()->to('/login');
         }
         return redirect()->to('/login');
+    }
+
+    public function daftarproduk()
+    {
+        return view('admin/daftarproduk');
+    }
+
+    public function test()
+    {
+        return view('admin/test');
     }
 }

@@ -10,7 +10,7 @@ class UsersModel extends Model
     protected $primaryKey = 'user_id';
 
     protected $returnType     = 'array';
-    protected $useSoftDeletes = true;
+    // protected $useSoftDeletes = true;
 
     protected $allowedFields = ['username', 'password', 'level'];
 
