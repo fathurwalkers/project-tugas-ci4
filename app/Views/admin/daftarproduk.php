@@ -20,19 +20,23 @@
             </tr>
         </thead>
         <tbody>
+        <?php $no = 1; ?>
+        <?php 
+        foreach($produks as $produk) : ?>
             <tr>
-                <td>1</td>
-                <td>Buku Pemrograman PHP</td>
-                <td>10.000.000</td>
+                <td><?= $no++; ?></td>
+                <td><?= $produk['nama_produk']; ?></td>
+                <td><?= $produk['harga_produk']; ?></td>
                 <td>
-                    <img src="#" alt="" width="250px">
+                    <img src="<?= $produk['kode_produk']; ?>" alt="" width="250px">
                 </td>
                 <td class="text-center">
-                    <a href="#" class="btn btn-info">Edit</a>
-                    <a href="#" class="btn btn-success">Detail Produk</a>
-                    <a href="#" class="btn btn-danger">Hapus</a>
+                    <a href="<?= $produk['produk_id']; ?>" class="btn btn-info">Edit</a>
+                    <a href="<?= $produk['produk_id']; ?>" class="btn btn-success">Detail Produk</a>
+                    <a href="<?= $produk['produk_id']; ?>" class="btn btn-danger">Hapus</a>
                 </td>
             </tr>
+        <?php endforeach; ?>
         </tbody>
     </table>
         </div>

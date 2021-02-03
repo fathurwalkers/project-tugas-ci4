@@ -85,10 +85,10 @@ class Dashboard extends BaseController
 
     public function daftarproduk()
     {
-        $data = [
-            ''
-        ];
-        return view('admin/daftarproduk');
+        $produks = $this->produkmodel->findAll();
+        return view('admin/daftarproduk', [
+            'produks' => $produks
+            ]);
     }
 
     public function tambahproduk()
