@@ -91,7 +91,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="../gallery.html" class="nav-link">
+            <a href="<?php echo base_url('/dashboard/tambah-produk') ?>" class="nav-link">
               <i class="nav-icon far fa fa-bars"></i>
               <p>
                 Tambah Produk

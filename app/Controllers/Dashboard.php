@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\ProdukModel;
 use App\Models\UsersModel;
 use Config\Database;
 
@@ -10,6 +11,7 @@ class Dashboard extends BaseController
     public function __construct()
     {
         $this->usermodel = new UsersModel();
+        $this->produkmodel = new ProdukModel();
     }
 
     public function index()
@@ -43,7 +45,6 @@ class Dashboard extends BaseController
     public function postregister()
     {
         // $userModel = new UsersModel;
-        $level = "admin";
         $this->usermodel->save([
             'username' => $this->request->getVar('username'),
             'password' => $this->request->getVar('password'),
@@ -84,6 +85,9 @@ class Dashboard extends BaseController
 
     public function daftarproduk()
     {
+        $data = [
+            ''
+        ];
         return view('admin/daftarproduk');
     }
 
@@ -94,7 +98,16 @@ class Dashboard extends BaseController
 
     public function posttambahproduk()
     {
-        //
+        $gambar = $this->request->getFile('kode_produk');
+        $namabaru = $gambar->getRandomName();
+        $path = $this->request->getFile('kode_produk')->store('gambar/', $namabaru);
+        // dd($path);
+        $this->produkmodel->save([
+            'nama_produk' => $this->request->getVar('nama_produk'),
+            'harga_produk' => strval($this->request->getVar('harga_produk')),
+            'kode_produk' => $path,
+        ]);
+        return redirect()->to('/dashboard/daftar-produk');
     }
 
     public function test()
