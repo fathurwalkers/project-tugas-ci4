@@ -87,6 +87,16 @@ class Dashboard extends BaseController
         return view('admin/daftarproduk');
     }
 
+    public function tambahproduk()
+    {
+        return view('admin/tambahproduk');
+    }
+
+    public function posttambahproduk()
+    {
+        //
+    }
+
     public function test()
     {
         return view('admin/test');

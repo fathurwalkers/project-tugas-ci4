@@ -26,6 +26,8 @@ $routes->get('/logout', 'Dashboard::logout');
 $routes->get('/dashboard/test', 'Dashboard::test');
 
 $routes->get('/dashboard/daftar-produk', 'Dashboard::daftarproduk');
+$routes->get('/dashboard/tambah-produk', 'Dashboard::tambahproduk');
+$routes->post('/dashboard/tambah-produk', 'Dashboard::posttambahproduk');
 
 if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
 	require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
