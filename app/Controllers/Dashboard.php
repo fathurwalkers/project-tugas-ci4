@@ -100,12 +100,12 @@ class Dashboard extends BaseController
     {
         $gambar = $this->request->getFile('kode_produk');
         $namabaru = $gambar->getRandomName();
-        $path = $this->request->getFile('kode_produk')->store('gambar/', $namabaru);
+        $path = $this->request->getFile('kode_produk')->move('gambar/', $namabaru);
         // dd($path);
         $this->produkmodel->save([
             'nama_produk' => $this->request->getVar('nama_produk'),
             'harga_produk' => strval($this->request->getVar('harga_produk')),
-            'kode_produk' => $path,
+            'kode_produk' => 'gambar/'.$namabaru,
         ]);
         return redirect()->to('/dashboard/daftar-produk');
     }

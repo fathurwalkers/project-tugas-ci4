@@ -5,7 +5,8 @@
 <!-- Default box -->
 <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Daftar Produk</h3>
+          <h3 class="card-title my-3">Daftar Produk</h3>
+          <a href="<?php echo base_url('dashboard/tambah-produk') ?>" class="float-right btn btn-primary mt-1">Tambah Produk</a>
         </div>
           
         <div class="card-body">
@@ -15,7 +16,7 @@
                 <th>#</th>
                 <th>Nama Produk</th>
                 <th>Harga Produk</th>
-                <th>Kode Produk</th>
+                <th>Gambar Produk</th>
                 <th>Kelola Produk</th>
             </tr>
         </thead>
@@ -28,7 +29,7 @@
                 <td><?= $produk['nama_produk']; ?></td>
                 <td><?= $produk['harga_produk']; ?></td>
                 <td>
-                    <img src="<?= $produk['kode_produk']; ?>" alt="" width="250px">
+                    <img src="<?php echo base_url('/'); ?>/<?= $produk['kode_produk']; ?>" alt="" width="45px">
                 </td>
                 <td class="text-center">
                     <a href="<?= $produk['produk_id']; ?>" class="btn btn-info">Edit</a>

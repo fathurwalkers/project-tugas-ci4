@@ -5,7 +5,8 @@
 <!-- Default box -->
 <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Tambah Produk</h3>
+        <h3 class="card-title my-3">Tambah Produk Baru</h3>
+          <a href="<?php echo base_url('dashboard/daftar-produk') ?>" class="float-right btn btn-primary mt-1">Kembali</a>
         </div>
         <div class="card-body">
           
