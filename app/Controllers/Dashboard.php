@@ -136,12 +136,16 @@ class Dashboard extends BaseController
 
     public function detailproduk($id_produk)
     {
-        dd($id_produk);
+        $produk = $this->produkmodel->where('produk_id', $id_produk)->first();
+        return view('admin/detailproduk', [
+            'produk' => $produk
+        ]);
     }
 
     public function hapusproduk($id_produk)
     {
-        dd($id_produk);
+        $produk = $this->produkmodel->where('produk_id', $id_produk)->delete();
+        return redirect()->to('/dashboard/daftar-produk');
     }
 
     public function test()
