@@ -111,6 +111,39 @@ class Dashboard extends BaseController
         return redirect()->to('/dashboard/daftar-produk');
     }
 
+    public function editproduk($id_produk)
+    {
+        $produk = $this->produkmodel->where('produk_id', $id_produk)->first();
+        return view('admin/editproduk', [
+            'produk' => $produk
+        ]);
+    }
+
+    public function posteditproduk($id_produk)
+    {
+        $kode_produk = random_int(155555, 555555);
+        $gambar = $this->request->getFile('kode_produk');
+        $namabaru = $gambar->getRandomName();
+        $path = $this->request->getFile('kode_produk')->move('gambar/', $namabaru);
+        $this->produkmodel->where('produk_id', $id_produk)->set([
+            'nama_produk' => $this->request->getVar('nama_produk'),
+            'harga_produk' => strval($this->request->getVar('harga_produk')),
+            'gambar_produk' => 'gambar/'.$namabaru,
+            'kode_produk' => strval($kode_produk),
+        ])->update();
+        return redirect()->to('/dashboard/daftar-produk');
+    }
+
+    public function detailproduk($id_produk)
+    {
+        dd($id_produk);
+    }
+
+    public function hapusproduk($id_produk)
+    {
+        dd($id_produk);
+    }
+
     public function test()
     {
         return view('admin/test');

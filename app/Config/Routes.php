@@ -29,6 +29,11 @@ $routes->get('/dashboard/daftar-produk', 'Dashboard::daftarproduk');
 $routes->get('/dashboard/tambah-produk', 'Dashboard::tambahproduk');
 $routes->post('/dashboard/tambah-produk', 'Dashboard::posttambahproduk');
 
+$routes->add('/dashboard/edit-produk/(:any)', 'Dashboard::editproduk/$1');
+$routes->post('/dashboard/edit-produk/(:any)', 'Dashboard::posteditproduk/$1');
+$routes->add('/dashboard/detail-produk/(:any)', 'Dashboard::detailproduk/$1');
+$routes->add('/dashboard/hapus-produk/(:any)', 'Dashboard::hapusproduk/$1');
+
 if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
 	require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }

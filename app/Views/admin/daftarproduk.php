@@ -34,9 +34,9 @@
                     <img src="<?php echo base_url('/'); ?>/<?= $produk['kode_produk']; ?>" alt="" width="45px">
                 </td> -->
                 <td class="text-center">
-                    <a href="<?= $produk['produk_id']; ?>" class="btn btn-info">Edit</a>
-                    <a href="<?= $produk['produk_id']; ?>" class="btn btn-success">Detail Produk</a>
-                    <a href="<?= $produk['produk_id']; ?>" class="btn btn-danger">Hapus</a>
+                    <a href="<?= base_url('dashboard/edit-produk'); ?>/<?= $produk['produk_id']; ?>" class="btn btn-info">Edit</a>
+                    <a href="<?= base_url('dashboard/detail-produk'); ?>/<?= $produk['produk_id']; ?>" class="btn btn-success">Detail Produk</a>
+                    <a href="<?= base_url('dashboard/hapus-produk'); ?>/<?= $produk['produk_id']; ?>" class="btn btn-danger">Hapus</a>
                 </td>
             </tr>
         <?php endforeach; ?>
