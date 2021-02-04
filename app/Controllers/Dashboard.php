@@ -156,8 +156,9 @@ class Dashboard extends BaseController
     public function resultscanner()
     {
         $resultscanner = $this->request->getVar('qrcode');
-        // return view('admin/result-scanner');
-        return header('location: '.$resultscanner);
+        return view('admin/result-scanner', [
+            'resultscanner' => $resultscanner
+        ]);
     }
 
     public function test()
