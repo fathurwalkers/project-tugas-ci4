@@ -16,7 +16,8 @@
                 <th>#</th>
                 <th>Nama Produk</th>
                 <th>Harga Produk</th>
-                <th>Gambar Produk</th>
+                <th>Kode Produk</th>
+                <!-- <th>Gambar Produk</th> -->
                 <th>Kelola Produk</th>
             </tr>
         </thead>
@@ -27,10 +28,11 @@
             <tr>
                 <td><?= $no++; ?></td>
                 <td><?= $produk['nama_produk']; ?></td>
-                <td><?= $produk['harga_produk']; ?></td>
-                <td>
+                <td><?= number_format($produk['harga_produk']); ?></td>
+                <td><?= $produk['kode_produk']; ?></td>
+                <!-- <td>
                     <img src="<?php echo base_url('/'); ?>/<?= $produk['kode_produk']; ?>" alt="" width="45px">
-                </td>
+                </td> -->
                 <td class="text-center">
                     <a href="<?= $produk['produk_id']; ?>" class="btn btn-info">Edit</a>
                     <a href="<?= $produk['produk_id']; ?>" class="btn btn-success">Detail Produk</a>
