@@ -34,6 +34,9 @@ $routes->post('/dashboard/edit-produk/(:any)', 'Dashboard::posteditproduk/$1');
 $routes->add('/dashboard/detail-produk/(:any)', 'Dashboard::detailproduk/$1');
 $routes->add('/dashboard/hapus-produk/(:any)', 'Dashboard::hapusproduk/$1');
 
+$routes->get('/dashboard/scanner', 'Dashboard::scanner');
+$routes->post('/dashboard/result-scanner', 'Dashboard::resultscanner');
+
 if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
 	require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }

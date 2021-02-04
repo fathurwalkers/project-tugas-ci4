@@ -82,7 +82,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="../gallery.html" class="nav-link">
+            <a href="<?= base_url('/dashboard/scanner'); ?>" class="nav-link">
               <i class="nav-icon far fa fa-bars"></i>
               <p>
                 Scan Produk
