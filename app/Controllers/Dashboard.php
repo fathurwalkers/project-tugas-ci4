@@ -17,9 +17,9 @@ class Dashboard extends BaseController
     public function index()
     {
         $users = session('username');
-        if (!$users){
+        if (!$users) {
             return redirect()->to('/login');
-        }else{
+        } else {
             return view('admin/index', ['users' => $users]);
         }
     }
@@ -44,7 +44,6 @@ class Dashboard extends BaseController
 
     public function postregister()
     {
-        // $userModel = new UsersModel;
         $this->usermodel->save([
             'username' => $this->request->getVar('username'),
             'password' => $this->request->getVar('password'),
@@ -55,18 +54,14 @@ class Dashboard extends BaseController
 
     public function postlogin()
     {
-        // $this->usermodel = new UsersModel();
         $session = session();
 
         $username = $this->request->getPost('username');
         $password = $this->request->getPost('password');
 
         $cocokuser = $this->usermodel->where('username', $username)->first();
-        // dd($cocokuser);
         if ($cocokuser) {
             $cocokpassword = $this->usermodel->where('password', $password)->first();
-            // $cocok_password = $cocokuser['password'];
-            // $password_verify = password_verify($password, $cocok_password);
             if ($cocokpassword) {
                 $setData = [
                     'username' => $username,

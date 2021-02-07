@@ -12,8 +12,8 @@ class ProdukModel extends Model
     protected $returnType     = 'array';
 
     protected $allowedFields = [
-        'nama_produk', 
-        'harga_produk', 
+        'nama_produk',
+        'harga_produk',
         'gambar_produk',
         'kode_produk'
     ];
