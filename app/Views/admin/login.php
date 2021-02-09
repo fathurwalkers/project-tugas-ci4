@@ -4,16 +4,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Log in (v2)</title>
+  <title>DORAWEB</title>
 
   <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="<?php echo base_url('/'); ?>/adminlte/plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet"
+    href="<?php echo base_url('/'); ?>/adminlte/plugins/fontawesome-free/css/all.min.css">
   <!-- icheck bootstrap -->
-  <link rel="stylesheet" href="<?php echo base_url('/'); ?>/adminlte/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <link rel="stylesheet"
+    href="<?php echo base_url('/'); ?>/adminlte/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="<?php echo base_url('/'); ?>/adminlte/dist/css/adminlte.min.css">
+  <link rel="stylesheet"
+    href="<?php echo base_url('/'); ?>/adminlte/dist/css/adminlte.min.css">
 </head>
 
 <body class="hold-transition login-page">
@@ -21,12 +25,14 @@
     <!-- /.login-logo -->
     <div class="card card-outline card-primary">
       <div class="card-header text-center">
-        <a href="../../index2.html" class="h1"><b>Admin</b>LTE</a>
+        <a href="../../index2.html" class="h1">DORAWEB</a>
       </div>
       <div class="card-body">
-        <p class="login-box-msg">Sign in to start your session</p>
+        <p class="login-box-msg">LOGIN KE DORAWEB</p>
 
-        <form action="<?= base_url('login/post') ?>" method="post">
+        <form
+          action="<?= base_url('login/post') ?>"
+          method="post">
           <?= csrf_field() ?>
           <div class="input-group mb-3">
             <input type="text" class="form-control" placeholder="Username" name="username">
@@ -75,7 +81,8 @@
           <a href="forgot-password.html">I forgot my password</a>
         </p>
         <p class="mb-0">
-          <a href="<?= base_url('/register') ?>" class="text-center">Register a new membership</a>
+          <a href="<?= base_url('/register') ?>"
+            class="text-center">Register a new membership</a>
         </p>
       </div>
       <!-- /.card-body -->
@@ -85,11 +92,17 @@
   <!-- /.login-box -->
 
   <!-- jQuery -->
-  <script src="<?php echo base_url('/'); ?>/adminlte/plugins/jquery/jquery.min.js"></script>
+  <script
+    src="<?php echo base_url('/'); ?>/adminlte/plugins/jquery/jquery.min.js">
+  </script>
   <!-- Bootstrap 4 -->
-  <script src="<?php echo base_url('/'); ?>/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script
+    src="<?php echo base_url('/'); ?>/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js">
+  </script>
   <!-- AdminLTE App -->
-  <script src="<?php echo base_url('/'); ?>/adminlte/dist/js/adminlte.min.js"></script>
+  <script
+    src="<?php echo base_url('/'); ?>/adminlte/dist/js/adminlte.min.js">
+  </script>
 </body>
 
 </html>
