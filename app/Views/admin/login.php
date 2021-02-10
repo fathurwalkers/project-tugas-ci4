@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DORAWEB</title>
+  <title>PONARION</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet"
@@ -25,10 +25,10 @@
     <!-- /.login-logo -->
     <div class="card card-outline card-primary">
       <div class="card-header text-center">
-        <a href="../../index2.html" class="h1">DORAWEB</a>
+        <a href="../../index2.html" class="h1">PONARION</a>
       </div>
       <div class="card-body">
-        <p class="login-box-msg">LOGIN KE DORAWEB</p>
+        <p class="login-box-msg">LOGIN KE PONARION</p>
 
         <form
           action="<?= base_url('login/post') ?>"
