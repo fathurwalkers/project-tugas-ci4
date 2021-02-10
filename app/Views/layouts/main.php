@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DARK MODE MOBILE</title>
+  <title>BEST FRIEND SQUAD</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet"
@@ -49,14 +49,14 @@
     <!-- /.navbar -->
 
     <!-- Main Sidebar Container -->
-    <aside class="main-sidebar bg-primary elevation-4 position-fixed">
+    <aside class="main-sidebar bg-info elevation-4 position-fixed">
       <!-- Brand Logo -->
       <a href="<?php echo base_url('/'); ?>/adminlte/index3.html"
         class="brand-link">
         <img
           src="<?php echo base_url('/'); ?>/adminlte/dist/img/AdminLTELogo.png"
           alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">M - DARK MODE</span>
+        <span class="brand-text font-weight-light">BESTFRIENDSQUAD</span>
       </a>
 
       <!-- Sidebar -->
