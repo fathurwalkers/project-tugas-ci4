@@ -13,7 +13,7 @@
 
     <!-- Custom fonts for this template-->
     <link
-        href="<?php echo base_url('/sbadmin/') ?>vendor/fontawesome-free/css/all.min.css"
+        href="<?php echo base_url('/sbadmin') ?>/vendor/fontawesome-free/css/all.min.css"
         rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
@@ -21,7 +21,7 @@
 
     <!-- Custom styles for this template-->
     <link
-        href="<?php echo base_url('/sbadmin/') ?>css/sb-admin-2.min.css"
+        href="<?php echo base_url('/sbadmin') ?>/css/sb-admin-2.min.css"
         rel="stylesheet">
 
 </head>
@@ -324,12 +324,9 @@
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
-                                <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
-                            </a>
-                            <!-- Dropdown - User Information -->
+                            <a href="<?php echo base_url('/logout') ?>"
+                                class="btn btn-danger">LOGOUT</a>
+                            <!-- Dropdown - User Information
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="#">
@@ -349,7 +346,7 @@
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>
-                            </div>
+                            </div> -->
                         </li>
 
                     </ul>
@@ -370,13 +367,13 @@
             <!-- End of Main Content -->
 
             <!-- Footer -->
-            <footer class="sticky-footer bg-white">
+            <!-- <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
                         <span>Copyright &copy; Your Website 2020</span>
                     </div>
                 </div>
-            </footer>
+            </footer> -->
             <!-- End of Footer -->
 
         </div>
@@ -391,7 +388,7 @@
     </a>
 
     <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <!-- <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -408,17 +405,25 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script
+        src="<?php echo base_url('/sbadmin') ?>/vendor/jquery/jquery.min.js">
+    </script>
+    <script
+        src="<?php echo base_url('/sbadmin') ?>/vendor/bootstrap/js/bootstrap.bundle.min.js">
+    </script>
 
     <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script
+        src="<?php echo base_url('/sbadmin') ?>/vendor/jquery-easing/jquery.easing.min.js">
+    </script>
 
     <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+    <script
+        src="<?php echo base_url('/sbadmin') ?>/js/sb-admin-2.min.js">
+    </script>
 
 </body>
 
