@@ -2,192 +2,247 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>BEST FRIEND SQUAD</title>
 
-  <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  <!-- Font Awesome -->
-  <link rel="stylesheet"
-    href="<?php echo base_url('/'); ?>/adminlte/plugins/fontawesome-free/css/all.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet"
-    href="<?php echo base_url('/'); ?>/adminlte/dist/css/adminlte.min.css">
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Aplikasi CRUD Nova Isfazar</title>
+
+    <!-- Custom fonts for this template-->
+    <link
+        href="<?php echo base_url('/sbadmin') ?>/vendor/fontawesome-free/css/all.min.css"
+        rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link
+        href="<?php echo base_url('/sbadmin') ?>/css/sb-admin-2.min.css"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css">
+
 </head>
 
-<body class="hold-transition sidebar-mini">
-  <!-- Site wrapper -->
-  <div class="wrapper">
-    <!-- Navbar -->
-    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-      <!-- Left navbar links -->
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-        </li>
-        <li class="nav-item d-none d-sm-inline-block">
-          <a href="<?php echo base_url('/'); ?>/adminlte/index3.html"
-            class="nav-link">Home</a>
-        </li>
-        <li class="nav-item d-none d-sm-inline-block">
-          <a href="#" class="nav-link">Contact</a>
-        </li>
-      </ul>
+<body id="page-top">
 
-      <!-- Right navbar links -->
-      <ul class="navbar-nav ml-auto">
-        <a class="nav-link btn btn-danger"
-          href="<?php echo base_url('/logout') ?>"
-          role="button">
-          <i class="fas fa-th-large pr-2"></i>LOGOUT
-        </a>
-      </ul>
-    </nav>
-    <!-- /.navbar -->
+    <!-- Page Wrapper -->
+    <div id="wrapper">
 
-    <!-- Main Sidebar Container -->
-    <aside class="main-sidebar bg-info elevation-4 position-fixed">
-      <!-- Brand Logo -->
-      <a href="<?php echo base_url('/'); ?>/adminlte/index3.html"
-        class="brand-link">
-        <img
-          src="<?php echo base_url('/'); ?>/adminlte/dist/img/AdminLTELogo.png"
-          alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">BESTFRIENDSQUAD</span>
-      </a>
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-      <!-- Sidebar -->
-      <div class="sidebar">
-        <!-- Sidebar user (optional) -->
-        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-          <div class="info">
-            <a href="#" class="d-block pl-3">BERANDA</a>
-          </div>
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">NOVA ISFAZAR</div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item">
+                <a href="<?php echo base_url('dashboard') ?>"
+                    class="nav-link">
+
+
+                    Beranda
+
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="<?php echo base_url('dashboard/daftarproduk') ?>"
+                    class="nav-link">
+
+
+                    Daftar Produk
+
+                </a>
+            </li>
+
+            <!-- <li class="nav-item">
+                <a href="<?= base_url('/dashboard/scanner'); ?>"
+            class="nav-link">
+
+
+            Scan Produk
+
+            </a>
+            </li> -->
+
+            <li class="nav-item">
+                <a href="<?php echo base_url('/dashboard/tambah-produk') ?>"
+                    class="nav-link">
+
+
+                    Tambah Produk
+
+                </a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- Topbar Search -->
+                    <form
+                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                                aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="fas fa-search fa-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Topbar Navbar -->
+
+
+
+
+                    <!-- Nav Item - Messages -->
+
+
+                    <div class="topbar-divider d-none d-sm-block"></div>
+
+                    <!-- Nav Item - User Information -->
+                    <li class="nav-item dropdown no-arrow">
+                        <a href="<?php echo base_url('/logout') ?>"
+                            class="btn btn-danger">LOGOUT</a>
+                        <!-- Dropdown - User Information
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Profile
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Settings
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Activity Log
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
+                            </div> -->
+                    </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <?php echo $this->renderSection('main-content'); ?>
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <!-- <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Your Website 2020</span>
+                    </div>
+                </div>
+            </footer> -->
+            <!-- End of Footer -->
+
         </div>
+        <!-- End of Content Wrapper -->
 
-        <!-- Sidebar Menu -->
-        <nav class="mt-2">
-          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-            <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-
-            <li class="nav-item">
-              <a href="<?php echo base_url('dashboard') ?>"
-                class="nav-link">
-                <i class="nav-icon far fa fa-bars"></i>
-                <p>
-                  Beranda
-                </p>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a href="<?php echo base_url('dashboard/daftarproduk') ?>"
-                class="nav-link">
-                <i class="nav-icon far fa fa-bars"></i>
-                <p>
-                  Daftar Produk
-                </p>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a href="<?= base_url('/dashboard/scanner'); ?>"
-                class="nav-link">
-                <i class="nav-icon far fa fa-bars"></i>
-                <p>
-                  Scan Produk
-                </p>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a href="<?php echo base_url('/dashboard/tambah-produk') ?>"
-                class="nav-link">
-                <i class="nav-icon far fa fa-bars"></i>
-                <p>
-                  Tambah Produk
-                </p>
-              </a>
-            </li>
-
-          </ul>
-        </nav>
-        <!-- /.sidebar-menu -->
-      </div>
-      <!-- /.sidebar -->
-    </aside>
-
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
-      <!-- Content Header (Page header) -->
-      <section class="content-header">
-        <div class="container-fluid">
-          <div class="row mb-2">
-            <div class="col-sm-6">
-              <h1>Dashboard</h1>
-            </div>
-            <div class="col-sm-6">
-              <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item active">Dashboard</li>
-              </ol>
-            </div>
-          </div>
-        </div><!-- /.container-fluid -->
-      </section>
-
-      <!-- Main content -->
-      <section class="content">
-
-        <?php echo $this->renderSection('main-content'); ?>
-
-      </section>
-      <!-- /.content -->
     </div>
-    <!-- /.content-wrapper -->
+    <!-- End of Page Wrapper -->
 
-    <footer class="main-footer">
-      <div class="float-right d-none d-sm-block">
-        <b>Version</b> 3.1.0-rc
-      </div>
-      <strong>Copyright &copy; 2014-2020 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
-    </footer>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
 
-    <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark">
-      <!-- Control sidebar content goes here -->
-    </aside>
-    <!-- /.control-sidebar -->
-  </div>
-  <!-- ./wrapper -->
+    <!-- Logout Modal-->
+    <!-- <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div> -->
 
-  <!-- jQuery -->
-  <script
-    src="<?php echo base_url('/'); ?>/adminlte/plugins/jquery/jquery.min.js">
-  </script>
-  <!-- Bootstrap 4 -->
-  <script
-    src="<?php echo base_url('/'); ?>/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js">
-  </script>
-  <!-- AdminLTE App -->
-  <script
-    src="<?php echo base_url('/'); ?>/adminlte/dist/js/adminlte.min.js">
-  </script>
-  <!-- AdminLTE for demo purposes -->
-  <script
-    src="<?php echo base_url('/'); ?>/adminlte/dist/js/demo.js">
-  </script>
-  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-  <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
-  <script>
-    $(document).ready(function() {
-      $('#example').DataTable();
-    });
-  </script>
+    <!-- Bootstrap core JavaScript-->
+    <script
+        src="<?php echo base_url('/sbadmin') ?>/vendor/jquery/jquery.min.js">
+    </script>
+    <script
+        src="<?php echo base_url('/sbadmin') ?>/vendor/bootstrap/js/bootstrap.bundle.min.js">
+    </script>
+
+    <!-- Core plugin JavaScript-->
+    <script
+        src="<?php echo base_url('/sbadmin') ?>/vendor/jquery-easing/jquery.easing.min.js">
+    </script>
+
+    <!-- Custom scripts for all pages-->
+    <script
+        src="<?php echo base_url('/sbadmin') ?>/js/sb-admin-2.min.js">
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#example').DataTable();
+        });
+    </script>
+
 </body>
 
 </html>
